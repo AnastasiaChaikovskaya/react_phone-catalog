@@ -1,0 +1,82 @@
+.header {
+  &__top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 16px;
+    align-items: center;
+
+    @include on-desktop {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__logo {
+    width: 60px;
+    height: 20.8px;
+
+    @include on-desktop {
+      width: 80px;
+      height: 27px;
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include on-phone {
+      display: none;
+    }
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &--list {
+      display: flex;
+      gap: 32px;
+
+      @include on-desktop {
+        gap: 64px;
+      }
+    }
+  }
+}
+
+.nav {
+  &__link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 4%;
+    color: $main-nonactive-page;
+  }
+
+  &__item {
+    position: relative;
+  }
+}
+
+.is-active-page {
+  color: $main-color-text;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    background-color: $main-color-text;
+    height: 2px;
+    width: 100%;
+  }
+}
