@@ -5,9 +5,7 @@ import { Header } from './modules/shared/Header/Header';
 export const App = () => {
   return (
     <body className="page">
-      <div className="container">
-        <Header />
-      </div>
+      <Header />
       <Outlet />
     </body>
   );

@@ -17,10 +17,9 @@
 }
 
 @mixin content-pudding-inline {
-  padding-inline: 16px;
+  padding-inline: 24px;
 
   @include on-tablet {
-    padding-inline: 24px;
     max-width: 1200px;
     margin-inline: auto;
   }

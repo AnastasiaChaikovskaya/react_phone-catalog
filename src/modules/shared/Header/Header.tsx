@@ -2,21 +2,35 @@ import Menu from './components/MenuDesktop';
 
 export const Header = () => {
   return (
-    <header className="header">
-      <div className="header__top-bar">
-        <a href="">
-          <img
-            src="./img/logo/header-logo.svg"
-            alt="header logo"
-            className="header__logo"
-          />
-        </a>
+    <>
+      <div className="container">
+        <header className="header">
+          <div className="header__top-bar">
+            <a href="">
+              <img
+                src="./img/logo/header-logo.svg"
+                alt="header logo"
+                className="header__logo"
+              />
+            </a>
 
-        <div className="header__icon">
-          <img src="./img/icons/icon-menu.svg" alt="burger menu" />
-        </div>
-        <Menu />
+            <div className="header__icon">
+              <img src="./img/icons/icon-menu.svg" alt="burger menu" />
+            </div>
+            <Menu />
+
+            <div className="header__right">
+              <div className="header__right--fav">
+                <img src="./img/logo/header-fav.svg" alt="favorites" />
+              </div>
+              <div className="header__right--cart">
+                <img src="./img/logo/header-cart.svg" alt="cart" />
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
-    </header>
+      <div className="header__line"></div>
+    </>
   );
 };

@@ -3,11 +3,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-block: 16px;
+    padding-block: 13px;
+    gap: 16px;
     align-items: center;
 
     @include on-desktop {
-      padding-bottom: 24px;
+      padding-block: 16px;
     }
   }
 
@@ -21,16 +22,89 @@
     }
   }
 
+  &__right {
+    @include on-phone {
+      display: none;
+    }
+
+    &--cart {
+      height: 14px;
+      padding-left: 16px;
+
+      @include on-desktop {
+        padding-left: 24px;
+      }
+    }
+
+    &--fav {
+      height: 14px;
+      padding-inline: 16px;
+      position: relative;
+
+      @include on-desktop {
+        padding-inline: 24px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 0;
+        height: 51px;
+        width: 1px;
+        box-shadow: -1px 0 0 0 #e2e6e9;
+
+        @include on-desktop {
+          top: -23px;
+          height: 63px;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -16px;
+        right: 0;
+        height: 51px;
+        width: 1px;
+        box-shadow: -1 0 0 0 #e2e6e9;
+
+        @include on-desktop {
+          top: -23px;
+          height: 63px;
+        }
+      }
+    }
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
   &__icon {
-    height: 24px;
-    width: 24px;
     display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: flex;
+      top: -20px;
+      flex-direction: row;
+      position: absolute;
+      height: 56px;
+      left: -16px;
+      width: 100%;
+      box-shadow: -1px 0 0 0 #e2e6e9;
+    }
 
     @include on-tablet {
       display: none;
     }
+  }
+
+  &__line {
+    height: 1px;
+    box-shadow: 0 1px 0 0 #e2e6e9;
   }
 
   &__nav {
